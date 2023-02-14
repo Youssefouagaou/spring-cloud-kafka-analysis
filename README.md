@@ -17,13 +17,13 @@ Product (By Id)
 
 # Angular Frontend 
 ## Products List
-![image](https://user-images.githubusercontent.com/62290643/202019727-5909dde8-634d-437a-a81d-f556084e9787.png)
+![image](https://user-images.githubusercontent.com/104561725/218809046-a098a7e1-0a64-44a1-9d52-1c73f2245f42.png)
 ##  Customers List
-![image](https://user-images.githubusercontent.com/62290643/202019848-a360a512-7e6a-4a15-b3ce-960f9202d11c.png)
+![image](https://user-images.githubusercontent.com/104561725/218810183-80d950fc-8a73-491f-9d2f-897930c3eca3.png)
 ##  Customer Orders List
-![image](https://user-images.githubusercontent.com/62290643/202019983-253bd49f-358c-4e9d-9f78-abb06a5dbc28.png)
+![image](https://user-images.githubusercontent.com/104561725/218812174-d89d5315-2c2c-4f96-9b31-35173962da2a.png)
 ##  Order Details
-![image](https://user-images.githubusercontent.com/62290643/202020120-098fe060-970c-44d3-b76e-0507703720c7.png)
+![image](https://user-images.githubusercontent.com/104561725/218812807-36bc2fd2-9ab0-4d88-9401-b1c694186aed.png)
 
 #  Secured Angular Client with keykcloak 
 ##  Login page
