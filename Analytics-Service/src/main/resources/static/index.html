@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analytics</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothie/1.34.0/smoothie.min.js"></script>
+</head>
+<body>
+<h1 style="text-align: center;">Bouzri Med</h1>
+<canvas height="400" id="chart" width="600"></canvas>
+<div>
+    <h3 style="color: rgb(4,175,150)">Customer 1</h3>
+    <h3 style="color: rgb(159,178,7)">Customer 2</h3>
+    <h3 style="color: rgb(18,168,7)">Customer 3</h3>
+    <h3 style="color: rgb(201,7,74)">Customer 4</h3>
+</div>
+<script>    var index = -1;
+randomColor = function () {
+    ++index;
+    if (index >= colors.length) index = 0;
+    return colors[index];
+}
+var customers = ["1", "2", "3", "4"];
+var colors = [
+    {sroke: 'rgb(0,255,217)', fill: 'rgb(3,98,83, 0.2)'},
+    {sroke: 'rgb(230,255,0)', fill: 'rgb(92,101,5, 0.2)'},
+    {sroke: 'rgb(17,255,0)', fill: 'rgb(17,255,0, 0.2)'},
+    {sroke: 'rgb(255,0,89)', fill: 'rgb(255,0,89, 0.2)'}
+];
+var courbe = [];
+var smoothieChart = new SmoothieChart({tooltip: true, labels:{showIntermediateLabels:true}} );
+smoothieChart.streamTo(document.getElementById("chart"), 500);
+customers.forEach(function (v) {
+    courbe[v] = new TimeSeries();
+    col = randomColor();
+    smoothieChart.addTimeSeries(courbe[v], {strokeStyle: col.sroke, fillStyle: col.fill, lineWidth: 2});
+});
+var stockEventSource = new EventSource("/analytics");
+stockEventSource.addEventListener("message", function (event) {
+    customers.forEach(function (v) {
+        val = JSON.parse(event.data)[v];
+        courbe[v].append(new Date().getTime(), val);
+    });
+});</script>
+</body>
+</html></body></html>
